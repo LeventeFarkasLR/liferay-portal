@@ -15,7 +15,7 @@
 package com.liferay.saml.web.internal.portlet.action;
 
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCRenderCommand;
-import com.liferay.saml.web.internal.constants.SamlAdminPortletKeys;
+import com.liferay.saml.constants.SamlAdminPortletKeys;
 
 import javax.portlet.PortletException;
 import javax.portlet.RenderRequest;
