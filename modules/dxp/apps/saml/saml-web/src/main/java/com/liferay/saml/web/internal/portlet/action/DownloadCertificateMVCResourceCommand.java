@@ -22,7 +22,7 @@ import com.liferay.portal.kernel.portlet.bridges.mvc.MVCResourceCommand;
 import com.liferay.portal.kernel.util.ContentTypes;
 import com.liferay.portal.kernel.util.ParamUtil;
 import com.liferay.portal.kernel.util.Validator;
-import com.liferay.saml.constants.SamlAdminPortletKeys;
+import com.liferay.saml.constants.SamlPortletKeys;
 import com.liferay.saml.runtime.metadata.LocalEntityManager;
 
 import javax.portlet.ResourceRequest;
@@ -37,7 +37,7 @@ import org.osgi.service.component.annotations.Reference;
 @Component(
 	immediate = true,
 	property = {
-		"javax.portlet.name=" + SamlAdminPortletKeys.SAML_ADMIN,
+		"javax.portlet.name=" + SamlPortletKeys.SAML_ADMIN,
 		"mvc.command.name=/admin/downloadCertificate"
 	},
 	service = MVCResourceCommand.class
