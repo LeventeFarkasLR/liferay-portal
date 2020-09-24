@@ -17,6 +17,9 @@ package com.liferay.osb.provisioning.koroneiki.web.service.internal;
 import com.liferay.osb.koroneiki.phloem.rest.client.http.HttpInvoker;
 import com.liferay.osb.koroneiki.phloem.rest.client.pagination.Page;
 import com.liferay.osb.provisioning.koroneiki.web.service.exception.HttpException;
+import com.liferay.portal.kernel.json.JSONFactoryUtil;
+import com.liferay.portal.kernel.json.JSONObject;
+import com.liferay.portal.kernel.util.Validator;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -74,7 +77,22 @@ public class BaseWebService {
 		int statusCode = httpResponse.getStatusCode();
 
 		if (statusCode >= 300) {
-			throw new HttpException(httpResponse.getContent(), statusCode);
+			String errorMessage = httpResponse.getContent();
+
+			try {
+				JSONObject jsonObject = JSONFactoryUtil.createJSONObject(
+					httpResponse.getContent());
+
+				String title = jsonObject.getString("title");
+
+				if (Validator.isNotNull(title)) {
+					errorMessage = title;
+				}
+			}
+			catch (Exception exception) {
+			}
+
+			throw new HttpException(errorMessage, statusCode);
 		}
 	}
 
