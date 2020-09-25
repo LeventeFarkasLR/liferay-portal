@@ -45,7 +45,14 @@ ViewAccountContactsDisplayContext viewAccountContactsDisplayContext = Provisioni
 			escapedModel="<%= true %>"
 			modelVar="contactDisplay"
 		>
+			<liferay-portlet:renderURL portletName="<%= ProvisioningPortletKeys.USERS %>" var="rowURL">
+				<portlet:param name="mvcRenderCommandName" value="/users/view_contact" />
+				<portlet:param name="redirect" value="<%= currentURL %>" />
+				<portlet:param name="contactEmailAddress" value="<%= contactDisplay.getEmailAddress() %>" />
+			</liferay-portlet:renderURL>
+
 			<liferay-ui:search-container-column-text
+				href="<%= rowURL %>"
 				name="name-email"
 			>
 				<%= HtmlUtil.escape(contactDisplay.getFullName()) %>

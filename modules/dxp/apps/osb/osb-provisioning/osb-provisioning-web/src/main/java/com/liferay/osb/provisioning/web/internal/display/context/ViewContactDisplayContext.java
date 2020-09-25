@@ -95,20 +95,21 @@ public class ViewContactDisplayContext {
 		return searchContainer;
 	}
 
-	public List<String> getContactAccountTeamNames(String accountKey)
+	public List<TeamDisplay> getContactAccountTeamDisplays(String accountKey)
 		throws Exception {
 
-		List<String> names = new ArrayList<>();
+		List<TeamDisplay> teamDisplays = new ArrayList<>();
 
 		Team[] teams = contact.getTeams();
 
 		for (Team team : teams) {
 			if (accountKey.equals(team.getAccountKey())) {
-				names.add(team.getName());
+				teamDisplays.add(
+					new TeamDisplay(renderRequest, renderResponse, team));
 			}
 		}
 
-		return names;
+		return teamDisplays;
 	}
 
 	public ContactDisplay getContactDisplay() {

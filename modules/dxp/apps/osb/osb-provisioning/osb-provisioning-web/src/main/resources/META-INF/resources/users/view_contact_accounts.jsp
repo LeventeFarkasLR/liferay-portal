@@ -33,7 +33,14 @@ ViewContactDisplayContext viewContactDisplayContext = ProvisioningWebComponentPr
 			className="com.liferay.osb.provisioning.web.internal.display.context.AccountDisplay"
 			modelVar="accountDisplay"
 		>
+			<liferay-portlet:renderURL portletName="<%= ProvisioningPortletKeys.ACCOUNTS %>" var="rowURL">
+				<portlet:param name="mvcRenderCommandName" value="/accounts/view_account" />
+				<portlet:param name="redirect" value="<%= currentURL %>" />
+				<portlet:param name="accountKey" value="<%= accountDisplay.getKey() %>" />
+			</liferay-portlet:renderURL>
+
 			<liferay-ui:search-container-column-text
+				href="<%= rowURL %>"
 				name="account-name-code"
 			>
 				<%= HtmlUtil.escape(accountDisplay.getName()) %>
@@ -60,13 +67,21 @@ ViewContactDisplayContext viewContactDisplayContext = ProvisioningWebComponentPr
 			>
 
 				<%
-				List<String> teamNames = viewContactDisplayContext.getContactAccountTeamNames(accountDisplay.getKey());
+				List<TeamDisplay> teamDisplays = viewContactDisplayContext.getContactAccountTeamDisplays(accountDisplay.getKey());
 
-				for (int i = 0; i < teamNames.size(); i++) {
-					String teamName = teamNames.get(i);
+				for (int i = 0; i < teamDisplays.size(); i++) {
+					TeamDisplay teamDisplay = teamDisplays.get(i);
 				%>
 
-					<%= HtmlUtil.escape(teamName) %><%= ((i + 1) < teamNames.size()) ? "<br />" : "" %>
+					<liferay-portlet:renderURL portletName="<%= ProvisioningPortletKeys.ACCOUNTS %>" var="teamURL">
+						<portlet:param name="mvcRenderCommandName" value="/accounts/view_team" />
+						<portlet:param name="redirect" value="<%= currentURL %>" />
+						<portlet:param name="teamKey" value="<%= teamDisplay.getKey() %>" />
+					</liferay-portlet:renderURL>
+
+					<a href="<%= teamURL %>"><%= HtmlUtil.escape(teamDisplay.getName()) %></a>
+
+					<%= ((i + 1) < teamDisplays.size()) ? "<br />" : "" %>
 
 				<%
 				}
@@ -100,7 +115,14 @@ ViewContactDisplayContext viewContactDisplayContext = ProvisioningWebComponentPr
 			className="com.liferay.osb.provisioning.web.internal.display.context.AccountDisplay"
 			modelVar="accountDisplay"
 		>
+			<liferay-portlet:renderURL portletName="<%= ProvisioningPortletKeys.ACCOUNTS %>" var="rowURL">
+				<portlet:param name="mvcRenderCommandName" value="/accounts/view_account" />
+				<portlet:param name="redirect" value="<%= currentURL %>" />
+				<portlet:param name="accountKey" value="<%= accountDisplay.getKey() %>" />
+			</liferay-portlet:renderURL>
+
 			<liferay-ui:search-container-column-text
+				href="<%= rowURL %>"
 				name="account-name-code"
 			>
 				<%= HtmlUtil.escape(accountDisplay.getName()) %>
