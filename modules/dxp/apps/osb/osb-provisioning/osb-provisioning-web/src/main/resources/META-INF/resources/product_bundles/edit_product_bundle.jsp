@@ -80,7 +80,7 @@ if (products != null) {
 
 								<tr>
 									<td>
-										<%= product.getName() %>
+										<%= HtmlUtil.escape(product.getName()) %>
 									</td>
 									<td class="text-right" id="<%= product.getKey() %>">
 										<button class="btn" onclick="<portlet:namespace />removeName(this);" type="button">

@@ -97,8 +97,7 @@ public class EditProductPurchaseDisplayContext
 
 		List<Product> products = productWebService.getProducts(
 			keywords, StringPool.BLANK, searchContainer.getCur(),
-			searchContainer.getEnd() - searchContainer.getStart(),
-			StringPool.BLANK);
+			searchContainer.getEnd() - searchContainer.getStart(), "name");
 
 		searchContainer.setResults(
 			TransformUtil.transform(

@@ -50,7 +50,7 @@ SearchContainer searchContainer = assignProductBundleProductsDisplayContext.getS
 		>
 			<liferay-ui:search-container-column-text
 				name="products"
-				property="name"
+				value="<%= HtmlUtil.escape(productDisplay.getName()) %>"
 			/>
 		</liferay-ui:search-container-row>
 

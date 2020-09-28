@@ -75,7 +75,7 @@ ProductSearchDisplayContext productSearchDisplayContext = ProvisioningWebCompone
 			<liferay-ui:search-container-column-text
 				href="<%= rowURL %>"
 				name="name"
-				value="<%= productDisplay.getName() %>"
+				value="<%= HtmlUtil.escape(productDisplay.getName()) %>"
 			/>
 
 			<liferay-ui:search-container-column-text

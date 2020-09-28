@@ -16,9 +16,11 @@ package com.liferay.osb.provisioning.web.internal.display.context;
 
 import com.liferay.osb.koroneiki.phloem.rest.client.dto.v1_0.Product;
 import com.liferay.petra.string.StringPool;
+import com.liferay.portal.kernel.language.LanguageUtil;
 import com.liferay.portal.kernel.portlet.LiferayPortletResponse;
 import com.liferay.portal.kernel.util.Constants;
 import com.liferay.portal.kernel.util.PortalUtil;
+import com.liferay.portal.kernel.util.Validator;
 
 import java.util.Map;
 
@@ -70,10 +72,14 @@ public class ProductDisplay {
 		Map<String, String> properties = _product.getProperties();
 
 		if (properties != null) {
-			return properties.get("type");
+			String type = properties.get("type");
+
+			if (Validator.isNotNull(type)) {
+				return LanguageUtil.get(_httpServletRequest, type);
+			}
 		}
 
-		return StringPool.BLANK;
+		return StringPool.DASH;
 	}
 
 	private final HttpServletRequest _httpServletRequest;

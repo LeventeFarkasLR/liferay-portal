@@ -94,7 +94,7 @@ PortletURL portletURL = viewAccountDisplayContext.getPortletURL();
 				href="<%= rowURL %>"
 				name="product"
 			>
-				<%= productPurchaseViewDisplay.getName() %>
+				<%= HtmlUtil.escape(productPurchaseViewDisplay.getName()) %>
 
 				<div class="secondary-information">
 					<%= productPurchaseViewDisplay.getSizingWithLabel() %>

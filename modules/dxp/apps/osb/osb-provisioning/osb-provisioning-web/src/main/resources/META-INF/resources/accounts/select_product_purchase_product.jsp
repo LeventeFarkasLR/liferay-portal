@@ -49,7 +49,7 @@ SearchContainer productSearchContainer = editProductPurchaseDisplayContext.getPr
 			Map<String, Object> productData = new HashMap<String, Object>();
 
 			productData.put("key", productDisplay.getKey());
-			productData.put("name", productDisplay.getName());
+			productData.put("name", HtmlUtil.escape(productDisplay.getName()));
 
 			row.setData(productData);
 
@@ -60,7 +60,7 @@ SearchContainer productSearchContainer = editProductPurchaseDisplayContext.getPr
 
 			<liferay-ui:search-container-column-text
 				name="products"
-				property="name"
+				value="<%= HtmlUtil.escape(productDisplay.getName()) %>"
 			/>
 		</liferay-ui:search-container-row>
 

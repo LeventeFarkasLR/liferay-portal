@@ -149,7 +149,7 @@ if (productPurchase != null) {
 					<tbody>
 						<tr>
 							<td class="table-cell-expand" id="<portlet:namespace />productName">
-								<%= (productPurchase != null) ? productPurchaseDisplay.getProductName() : "" %>
+								<%= (productPurchase != null) ? HtmlUtil.escape(productPurchaseDisplay.getProductName()) : "" %>
 							</td>
 
 							<c:if test="<%= productPurchase == null %>">
