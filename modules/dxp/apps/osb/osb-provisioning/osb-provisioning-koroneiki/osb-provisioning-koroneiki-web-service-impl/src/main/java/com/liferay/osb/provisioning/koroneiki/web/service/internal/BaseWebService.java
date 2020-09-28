@@ -17,6 +17,7 @@ package com.liferay.osb.provisioning.koroneiki.web.service.internal;
 import com.liferay.osb.koroneiki.phloem.rest.client.http.HttpInvoker;
 import com.liferay.osb.koroneiki.phloem.rest.client.pagination.Page;
 import com.liferay.osb.provisioning.koroneiki.web.service.exception.HttpException;
+import com.liferay.portal.kernel.json.JSONException;
 import com.liferay.portal.kernel.json.JSONFactoryUtil;
 import com.liferay.portal.kernel.json.JSONObject;
 import com.liferay.portal.kernel.util.Validator;
@@ -89,7 +90,7 @@ public class BaseWebService {
 					errorMessage = title;
 				}
 			}
-			catch (Exception exception) {
+			catch (JSONException jsonException) {
 			}
 
 			throw new HttpException(errorMessage, statusCode);
