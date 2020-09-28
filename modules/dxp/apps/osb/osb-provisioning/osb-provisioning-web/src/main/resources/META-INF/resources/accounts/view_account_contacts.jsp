@@ -42,7 +42,6 @@ ViewAccountContactsDisplayContext viewAccountContactsDisplayContext = Provisioni
 
 		<liferay-ui:search-container-row
 			className="com.liferay.osb.provisioning.web.internal.display.context.ContactDisplay"
-			escapedModel="<%= true %>"
 			modelVar="contactDisplay"
 		>
 			<liferay-portlet:renderURL portletName="<%= ProvisioningPortletKeys.USERS %>" var="rowURL">

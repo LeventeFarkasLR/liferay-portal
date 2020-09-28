@@ -62,7 +62,6 @@ AccountSearchDisplayContext accountSearchDisplayContext = ProvisioningWebCompone
 	>
 		<liferay-ui:search-container-row
 			className="com.liferay.osb.provisioning.web.internal.display.context.AccountDisplay"
-			escapedModel="<%= true %>"
 			keyProperty="accountKey"
 			modelVar="accountDisplay"
 		>

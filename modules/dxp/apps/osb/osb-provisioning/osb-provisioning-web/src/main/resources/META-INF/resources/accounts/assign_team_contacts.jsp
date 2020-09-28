@@ -43,7 +43,6 @@ SearchContainer searchContainer = assignTeamContactsDisplayContext.getSearchCont
 	>
 		<liferay-ui:search-container-row
 			className="com.liferay.osb.provisioning.web.internal.display.context.ContactDisplay"
-			escapedModel="<%= true %>"
 			keyProperty="emailAddress"
 			modelVar="contactDisplay"
 		>

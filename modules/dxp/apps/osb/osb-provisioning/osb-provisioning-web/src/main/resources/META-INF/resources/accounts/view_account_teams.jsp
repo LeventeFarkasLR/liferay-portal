@@ -38,7 +38,6 @@ ViewAccountTeamsDisplayContext viewAccountTeamsDisplayContext = ProvisioningWebC
 
 		<liferay-ui:search-container-row
 			className="com.liferay.osb.provisioning.web.internal.display.context.TeamDisplay"
-			escapedModel="<%= true %>"
 			modelVar="teamDisplay"
 		>
 			<portlet:renderURL var="rowURL">

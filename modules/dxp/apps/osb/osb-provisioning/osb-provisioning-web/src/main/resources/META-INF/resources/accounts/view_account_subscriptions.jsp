@@ -80,7 +80,6 @@ PortletURL portletURL = viewAccountDisplayContext.getPortletURL();
 	>
 		<liferay-ui:search-container-row
 			className="com.liferay.osb.provisioning.web.internal.display.context.ProductPurchaseViewDisplay"
-			escapedModel="<%= true %>"
 			modelVar="productPurchaseViewDisplay"
 		>
 			<portlet:renderURL var="rowURL">

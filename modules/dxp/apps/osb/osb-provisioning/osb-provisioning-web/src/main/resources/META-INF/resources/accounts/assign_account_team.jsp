@@ -43,7 +43,6 @@ SearchContainer searchContainer = assignAccountTeamDisplayContext.getSearchConta
 	>
 		<liferay-ui:search-container-row
 			className="com.liferay.osb.provisioning.web.internal.display.context.TeamDisplay"
-			escapedModel="<%= true %>"
 			keyProperty="teamKey"
 			modelVar="teamDisplay"
 		>

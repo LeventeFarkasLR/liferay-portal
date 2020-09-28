@@ -32,7 +32,6 @@ ProductPurchaseViewDisplay productPurchaseViewDisplay = viewSubscriptionDisplayC
 	>
 		<liferay-ui:search-container-row
 			className="com.liferay.osb.provisioning.web.internal.display.context.ProductPurchaseDisplay"
-			escapedModel="<%= true %>"
 			modelVar="productPurchaseDisplay"
 		>
 

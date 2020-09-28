@@ -62,7 +62,6 @@ ProductSearchDisplayContext productSearchDisplayContext = ProvisioningWebCompone
 	>
 		<liferay-ui:search-container-row
 			className="com.liferay.osb.provisioning.web.internal.display.context.ProductDisplay"
-			escapedModel="<%= true %>"
 			keyProperty="productKey"
 			modelVar="productDisplay"
 		>

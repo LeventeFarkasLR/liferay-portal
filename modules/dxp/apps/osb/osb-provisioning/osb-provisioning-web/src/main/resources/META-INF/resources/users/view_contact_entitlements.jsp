@@ -34,8 +34,7 @@ List<Entitlement> entitlements = Arrays.asList(koroneikiContact.getEntitlements(
 			/>
 
 			<liferay-ui:search-container-row
-				className="Entitlement"
-				escapedModel="<%= true %>"
+				className="com.liferay.osb.koroneiki.phloem.rest.client.dto.v1_0.Entitlement"
 				keyProperty="entitlementId"
 				modelVar="entitlement"
 			>

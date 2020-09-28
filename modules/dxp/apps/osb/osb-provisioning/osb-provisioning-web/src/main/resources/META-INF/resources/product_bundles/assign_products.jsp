@@ -44,7 +44,6 @@ SearchContainer searchContainer = assignProductBundleProductsDisplayContext.getS
 	>
 		<liferay-ui:search-container-row
 			className="com.liferay.osb.provisioning.web.internal.display.context.ProductDisplay"
-			escapedModel="<%= true %>"
 			keyProperty="key"
 			modelVar="productDisplay"
 		>
